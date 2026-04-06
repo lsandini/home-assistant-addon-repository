@@ -19,5 +19,5 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --amd64 --aarch64 --armv7 \
+            --amd64 --aarch64 \
             --target eda-modbus-bridge
