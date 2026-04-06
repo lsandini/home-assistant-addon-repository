@@ -1,5 +1,14 @@
 # Change log
 
+## 2.2.0
+- Update [eda-modbus-bridge 3.1.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.1.0)
+  * Update various dependencies
+  * Expose 3x0045 ("temperature control step") as a text sensor
+  * Fix room temperature average sensor for dedicated sensors (thanks @lauw)
+  * Add `default_entity_id` to Home Assistant discovery messages
+  * Change "summer night cooling" and "eco" to be setting switches, not modes
+  * Use the "config" entity category for settings switches
+
 ## 2.1.0
 - Drop support for the `armv7` architecture
 - Update [eda-modbus-bridge 3.0.2](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.0.2)
