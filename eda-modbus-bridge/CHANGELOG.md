@@ -1,5 +1,12 @@
 # Change log
 
+## 2.1.0
+- Drop support for the `armv7` architecture
+- Update [eda-modbus-bridge 3.0.2](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.0.2)
+  * Introduce a new error handler that gracefully handles Modbus read/write errors but also terminates the application
+    if too many errors occur subsequently
+  * Updated Systemd service file which reads command-line arguments from a dedicated file
+
 ## 2.0.1
 - Update to [eda-modbus-bridge 3.0.1](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.0.1)
   * Don't catch `PortNotOpenError` errors, fixes issue introduced in 3.0.0 where the program was left in a state it
