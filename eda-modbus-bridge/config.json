@@ -8,7 +8,7 @@
     "amd64"
   ],
   "init": false,
-  "url": "https://github.com/Jalle19/eda-modbus-bridge",
+  "url": "https://github.com/lsandini/eda-modbus-bridge",
   "startup": "application",
   "discovery": [
     "mqtt"
@@ -71,6 +71,5 @@
   },
   "ports_description": {
     "8080/tcp": "The HTTP listening port"
-  },
-  "image": "jalle19/hassos-{arch}-eda-modbus-bridge"
+  }
 }
