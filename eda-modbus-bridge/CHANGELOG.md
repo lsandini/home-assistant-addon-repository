@@ -1,5 +1,17 @@
 # Change log
 
+## 2.2.3
+- Pin the app build to [lsandini/eda-modbus-bridge `a8b0e8f`](https://github.com/lsandini/eda-modbus-bridge/commit/a8b0e8f75b41566d705fe12e96589083e06108e1)
+- Fix writing numeric (holding-register) settings over Modbus/TCP: this gateway's TCP→RTU bridge drops "Write Single Register" (FC06), so use "Write Multiple Registers" (FC16) instead (`writeRegister` → `writeRegisters`). Fixes `number.eda_temperaturetarget` and other numeric settings silently reverting.
+- Add a writable **home ventilation level** (`number.eda_ventilationlevel`, register 53) — the everyday fan-speed setpoint, previously only exposed read-only via the `ventilationLevelTarget` sensor
+
+## 2.2.2
+- Rebuild against the latest fork code (no functional app change over 2.2.1)
+
+## 2.2.1
+- Custom "FC15 test" fork build for older Enervent gateways whose Modbus/TCP→RTU bridge drops single-write function codes
+- Fix writing coil settings over Modbus/TCP: use "Write Multiple Coils" (FC15) instead of "Write Single Coil" (FC05) (`writeCoil` → `writeCoils`). Fixes the "cooling/heating/defrosting/… allowed" and mode switches not persisting
+
 ## 2.2.0
 - Update [eda-modbus-bridge 3.1.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.1.0)
   * Update various dependencies
