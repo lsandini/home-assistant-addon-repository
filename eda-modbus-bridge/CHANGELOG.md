@@ -1,5 +1,15 @@
 # Change log
 
+## 2.2.4
+- Pin the app build to [lsandini/eda-modbus-bridge `1d84e15`](https://github.com/lsandini/eda-modbus-bridge/commit/1d84e15b8f12751b86a689f00214a609fadb5081)
+- Add a **heat recovery allowed** switch (`switch.eda_heatRecoveryAllowed`, coil 53). The operator panel shows this
+  between "cooling allowed" and "heating allowed", but it was never exposed by the bridge. Note that "cooling allowed"
+  only disables *active* cooling of the supply air — free cooling via the heat recovery wheel is always allowed — so
+  coil 53 is the only control that governs the wheel itself. EDA automation only; the register is documented as unused
+  on MD
+- Fix the test suite, which still mocked the single-write function codes (FC05/FC06) after the 2.2.1/2.2.3 switch to
+  the multi-write ones (FC15/FC16)
+
 ## 2.2.3
 - Pin the app build to [lsandini/eda-modbus-bridge `a8b0e8f`](https://github.com/lsandini/eda-modbus-bridge/commit/a8b0e8f75b41566d705fe12e96589083e06108e1)
 - Fix writing numeric (holding-register) settings over Modbus/TCP: this gateway's TCP→RTU bridge drops "Write Single Register" (FC06), so use "Write Multiple Registers" (FC16) instead (`writeRegister` → `writeRegisters`). Fixes `number.eda_temperaturetarget` and other numeric settings silently reverting.

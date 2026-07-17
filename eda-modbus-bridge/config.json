@@ -1,6 +1,6 @@
 {
   "name": "Enervent EDA Modbus Bridge (FC15 test)",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [

@@ -15,7 +15,7 @@ RUN apt-get -y update && \
 # layer cache for the clone (the RUN string changes), forcing a fresh checkout.
 RUN git clone https://github.com/lsandini/eda-modbus-bridge.git eda-modbus-bridge && \
     cd eda-modbus-bridge && \
-    git checkout a8b0e8f75b41566d705fe12e96589083e06108e1
+    git checkout 1d84e15b8f12751b86a689f00214a609fadb5081
 
 RUN cd eda-modbus-bridge && \
     npm install && \
